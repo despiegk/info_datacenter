@@ -1,6 +1,6 @@
-# Book Earth Regenerator
+# Datacenter Research
 
-> see https://despiegk.github.io/book_earth_regenerator/intro/intro_readme.html
+> see https://despiegk.github.io/info_datacenter/electricity/electricity.html
 
 ## To Develop 
 
