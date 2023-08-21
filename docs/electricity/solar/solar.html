@@ -1,0 +1,289 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Solar - Earth Regenerator</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../../favicon.svg">
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../../highlight.css">
+        <link rel="stylesheet" href="../../tomorrow-night.css">
+        <link rel="stylesheet" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body>
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "../../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var html = document.querySelector('html');
+            var sidebar = null;
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item "><a href="../../intro/intro.html">Introduction</a></li><li class="chapter-item "><a href="../../electricity/electricity.html">Electricity</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../electricity/cost_overview.html">Cost Overview</a></li><li class="chapter-item "><a href="../../electricity/crude_oil.html">Crude Oil</a></li><li class="chapter-item "><a href="../../electricity/diesel.html">Diesel</a></li><li class="chapter-item "><a href="../../electricity/biomass.html">Biomass</a></li><li class="chapter-item "><a href="../../electricity/wind.html">Wind</a></li><li class="chapter-item "><a href="../../electricity/fuel_needed.html">Fuel Needed</a></li></ol></li><li class="chapter-item expanded "><a href="../../electricity/electricity.html">Solar</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../electricity/solar/solar.html" class="active">Solar</a></li><li class="chapter-item "><a href="../../electricity/solar/solar_cost.html">Cost</a></li><li class="chapter-item "><a href="../../electricity/solar/solar_land.html">Land</a></li></ol></li><li class="chapter-item "><a href="../../electricity/electricity.html">Battery</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../electricity/battery.html">Battery Storage</a></li><li class="chapter-item "><a href="../../electricity/ultracapacitors.html">Battery Ultra Capacitor</a></li><li class="chapter-item "><a href="../../electricity/h2o.html">H2O</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Earth Regenerator</h1>
+
+                    <div class="right-buttons">
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h2 id="cost-for-solar-power-plant"><a class="header" href="#cost-for-solar-power-plant">Cost for solar power plant</a></h2>
+<p>Here is an overview of the typical capital costs for a 1MW solar photovoltaic power plant:</p>
+<ul>
+<li>Solar modules - $0.5 - $0.6 million for crystalline silicon panels rated at 5W per sqft.</li>
+<li>Inverters - $50,000 - $100,000 for grid-tied inverter system and controls.</li>
+<li>Mounting system - $50,000 - $150,000 for fixed tilt or tracking mounts.</li>
+<li>Electrical equipment - $50,000 - $100,000 for transformers, switchgear, monitoring.</li>
+<li>Site preparation - $50,000 - $100,000 for grading, access, perimeter.</li>
+<li>Installation labor - $50,000 - $100,000 depending on complexity.</li>
+<li>Permitting and engineering - $50,000 - $100,000.</li>
+<li>Total: Approximately $800,000 to $1.2 million.</li>
+</ul>
+<p>The wide range accounts for differences in site location, labor rates, type of PV panels, mounting system and other factors. Economies of scale provide some cost savings for larger utility-scale systems.</p>
+<p>1MW solar PV power plant expressed in terms of cost per square meter:</p>
+<ul>
+<li>Solar modules - $100 - $120 per sqm. Crystalline silicon panels are typically rated at 200W per sqm.</li>
+<li>Inverters - $10 - $20 per sqm. Sized based on peak capacity.</li>
+<li>Mounting system - $10 - $30 per sqm. Depends on mounting type.</li>
+<li>Electrical equipment - $10 - $20 per sqm.</li>
+<li>Site preparation - $10 - $20 per sqm. Grading and access roads.</li>
+<li>Installation labor - $10 - $20 per sqm. Based on crew size.</li>
+<li>Permitting/engineering - $10 - $20 per sqm.</li>
+<li>Total: Approximately $160 to $250 per sqm.</li>
+</ul>
+<p>The total PV system size for 1MW is typically 4000 - 5000 sqm depending on the solar irradiance availability.</p>
+<h3 id="cost"><a class="header" href="#cost">Cost</a></h3>
+<p><img src="img/cost_solar.png" alt="" /></p>
+<blockquote>
+<p>+- 0.05 USD per kwatth, which is very good but thats only for when its sun.</p>
+</blockquote>
+<p><img src="img/solar_battery.png" alt="" /></p>
+<blockquote>
+<p>+- 0.08 USD per kwatth, which is still very good, but only 40% of capacity usable when there is no SUN</p>
+</blockquote>
+<p><img src="img/cost_ultracapacitor_solar.png" alt="" /></p>
+<h2 id="land-needed"><a class="header" href="#land-needed">Land needed</a></h2>
+<p>Here are some conservative estimates for the land area needed for a 5 MW solar PV facility in Africa:</p>
+<ul>
+<li>Assume a location in sub-Saharan Africa with an average solar insolation of 5.5 kWh/m2/day</li>
+<li>Use a conservative capacity factor of 15% for the solar PV system</li>
+<li>A solar panel with 20% efficiency and 1 m2 area will produce on average: 5.5 kWh/m2/day x 0.2 efficiency = 1.1 kWh per day 1.1 kWh/day x 365 days x 0.15 capacity factor = 61.2 kWh per year</li>
+<li>So each 1 m2 of solar panels will generate about 61.2 kWh per year</li>
+<li>The solar facility needs to generate 5 MW x 24 hours x 365 days = 43,800 MWh per year</li>
+<li>So total solar panels needed: 43,800,000 kWh / 61.2 kWh/m2 = 715,195 m2</li>
+<li>Add ~20% extra land for spacing, access roads etc.</li>
+<li>Total land area required: 715,195 m2 x 1.2 = 858,235 m2</li>
+<li>Which is 86 hectares or 0.86 km2</li>
+</ul>
+<p>So for a 5 MW solar PV facility with a 15% capacity factor in sub-Saharan Africa, a conservative estimate is around 86 hectares or 0.86 km2 of land area.</p>
+<p>If we only need it for 8 hours, then we can do ⅓</p>
+<ul>
+<li>We need 300,000m2 land for solar for the datacenter</li>
+</ul>
+<h2 id="zanzibar-suitable"><a class="header" href="#zanzibar-suitable">Zanzibar suitable?</a></h2>
+<p>Here are a few factors that indicate Zanzibar has relatively good suitability for solar energy production:</p>
+<ul>
+<li>Solar Irradiation - Zanzibar receives average solar insolation of around 5.5-6.0 kWh/m2 per day. This is considered a good level of solar resource for photovoltaic electricity generation.</li>
+<li>Close to Equator - At around 6 degrees South latitude, Zanzibar's location close to the equator provides consistent solar exposure throughout the year.</li>
+<li>Low Rainfall - The archipelago experiences lower rainfall amounts compared to other tropical regions. This allows for more days of direct sun exposure for solar panels versus cloudier areas.</li>
+<li>Land Availability - As an archipelago, land area is limited for large-scale solar farms. But the islands have ample unused land that could host small- to medium-scale solar developments. Rooftop solar also has significant potential.</li>
+<li>Growing Electricity Demand - Zanzibar has an emerging economy with increasing power demand that could benefit from distributed solar generation to supplement the grid.</li>
+<li>Decreasing Solar Costs - The global decline in solar PV costs makes adoption more feasible compared to past years.</li>
+<li>Supportive Policies - Tanzania has begun establishing policies like tax exemptions and net metering that can incentivize solar generation.</li>
+</ul>
+<h2 id="sunlight-per-day"><a class="header" href="#sunlight-per-day">sunlight per day</a></h2>
+<p>Here are some details on the average amount of sunlight per day in Zanzibar that is usable for solar energy:</p>
+<ul>
+<li>Zanzibar has an equatorial location off the east coast of Africa and receives abundant sunlight throughout the year.</li>
+<li>Average peak sun hours per day (hours with direct sunshine) is around 6-7 hours.</li>
+<li>For solar photovoltaic (PV) panels oriented appropriately, the average daily solar irradiation is about 5.5-6.0 kWh/m2.</li>
+<li>This solar irradiation includes both direct and diffuse sunlight. PV panels can utilize both components for electricity generation. </li>
+<li>Assuming a conservative 15% conversion efficiency for solar panels, the average usable sunlight is around 0.825 - 0.9 kWh/m2 per day.</li>
+<li>More advanced solar cell efficiencies up to 22% could provide over 1.2 kWh/m2 of usable electricity generation per day.</li>
+<li>Seasonal variation in usable sunlight is low due to Zanzibar's equatorial location. Output is fairly consistent throughout the year.</li>
+<li>Some cloud cover and humidity during the April-May rainy periods can slightly reduce usable sunlight.</li>
+</ul>
+<p>So in summary, Zanzibar benefits from excellent solar resources with approximately 6-7 peak sun hours and 5.5-6 kWh/m2 of daily irradiation. After accounting for real-world system efficiencies, on average 0.8 - 1.2 kWh/m2 of this sunlight can be utilized daily for electricity generation using solar photovoltaic panels.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../electricity/electricity.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next" href="../../electricity/solar/solar_cost.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../electricity/electricity.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next" href="../../electricity/solar/solar_cost.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <!-- Livereload script (if served using the cli tool) -->
+        <script>
+            const wsProtocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
+            const wsAddress = wsProtocol + "//" + location.host + "/" + "__livereload";
+            const socket = new WebSocket(wsAddress);
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload();
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr.min.js"></script>
+        <script src="../../mark.min.js"></script>
+        <script src="../../searcher.js"></script>
+
+        <script src="../../clipboard.min.js"></script>
+        <script src="../../highlight.js"></script>
+        <script src="../../book.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../../mermaid.min.js"></script>
+        <script src="../../mermaid-init.js"></script>
+
+
+    </div>
+    </body>
+</html>

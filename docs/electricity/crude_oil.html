@@ -1,0 +1,268 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Crude Oil - Earth Regenerator</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body>
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var html = document.querySelector('html');
+            var sidebar = null;
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item "><a href="../intro/intro.html">Introduction</a></li><li class="chapter-item expanded "><a href="../electricity/electricity.html">Electricity</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../electricity/cost_overview.html">Cost Overview</a></li><li class="chapter-item expanded "><a href="../electricity/crude_oil.html" class="active">Crude Oil</a></li><li class="chapter-item "><a href="../electricity/diesel.html">Diesel</a></li><li class="chapter-item "><a href="../electricity/biomass.html">Biomass</a></li><li class="chapter-item "><a href="../electricity/wind.html">Wind</a></li><li class="chapter-item "><a href="../electricity/fuel_needed.html">Fuel Needed</a></li></ol></li><li class="chapter-item "><a href="../electricity/electricity.html">Solar</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../electricity/solar/solar.html">Solar</a></li><li class="chapter-item "><a href="../electricity/solar/solar_cost.html">Cost</a></li><li class="chapter-item "><a href="../electricity/solar/solar_land.html">Land</a></li></ol></li><li class="chapter-item "><a href="../electricity/electricity.html">Battery</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../electricity/battery.html">Battery Storage</a></li><li class="chapter-item "><a href="../electricity/ultracapacitors.html">Battery Ultra Capacitor</a></li><li class="chapter-item "><a href="../electricity/h2o.html">H2O</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Earth Regenerator</h1>
+
+                    <div class="right-buttons">
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h2 id="crude-oil-generation-plant"><a class="header" href="#crude-oil-generation-plant">Crude Oil Generation Plant</a></h2>
+<p>Here is an estimate of the capital cost for a 10MW electricity generation plant running on crude oil:</p>
+<ul>
+<li>For small-scale oil power plants, capital costs typically range from $1500-$2000 per kW of capacity.</li>
+<li>For a 10MW plant, the capacity-based costs would be:
+<ul>
+<li>10,000 kW x $1500 per kW = $15 million</li>
+<li>10,000 kW x $2000 per kW = $20 million</li>
+</ul>
+</li>
+<li>The crude oil boiler/combustor system likely costs around $2 million for 10MW scale.</li>
+<li>Turbines, generators and power system equipment adds $5-10 million.</li>
+<li>Balance of plant, construction, site development, permitting, engineering etc can cost $5-10 million.</li>
+<li>So the total capital cost would likely range from:
+<ul>
+<li>$15 million + $10 million + $10 million = $35 million (on the lower end)</li>
+<li>$20 million + $10 million + $10 million = $40 million (on the higher end)</li>
+</ul>
+</li>
+</ul>
+<p>So in summary, the total installed capital cost for a 10MW crude oil power plant potentially ranges from $35 million to $40 million, with the per kW cost of the power generation equipment being the largest component. There are also significant ongoing fuel and O&amp;M costs.</p>
+<h2 id="crude-oil"><a class="header" href="#crude-oil">Crude Oil</a></h2>
+<p>Crude Oil is super bad for the environment</p>
+<ul>
+<li>Crude oil price: $90 per barrel</li>
+<li>150 kg per barrel</li>
+<li>Energy density: 45 MJ/kg</li>
+<li>Power plant efficiency: 38%</li>
+<li>Oil required per kWh: 0.092 kg/kWh</li>
+<li>Fuel cost per kWh:
+<ol>
+<li>092 kg/kWh x $90 per barrel / 150 kg per barrel = $0.068</li>
+</ol>
+</li>
+<li>O&amp;M cost per kWh: $0.02</li>
+<li>Total cost per kWh:
+<ul>
+<li>Fuel cost: $0.068</li>
+<li>O&amp;M cost: $0.02</li>
+<li>Total: $0.088 per kWh</li>
+</ul>
+</li>
+</ul>
+<p>Conclusion: cost would be around $0.12 if we take into consideration price of plant.</p>
+<h2 id="crude-oil-challenging-for-environment"><a class="header" href="#crude-oil-challenging-for-environment">Crude oil challenging for environment</a></h2>
+<p>There are a few key reasons why using crude oil for electricity generation is generally considered bad for the environment:</p>
+<ul>
+<li>Burning oil produces air pollutants like sulfur dioxide and nitrogen oxides that can cause acid rain and respiratory illnesses. Refining and transport also increase localized air pollution.</li>
+<li>Burning crude oil products like fuel oil or diesel to generate electricity emits high levels of carbon dioxide (CO2). Per unit of electricity, oil releases over 50% more CO2 than natural gas and almost double the emissions of renewable sources like solar or wind power.</li>
+<li>Crude oil has a very high carbon-to-hydrogen ratio compared to other fuels, so burning it results in especially high CO2 outputs. This significantly contributes to rising atmospheric greenhouse gas levels and climate change.</li>
+<li>Extracting, refining and transporting crude oil to turn it into usable fuel requires massive amounts of energy itself. The whole supply chain has heavy environmental impacts. Additional emissions and pollution occur before the oil is even burned for electricity.</li>
+<li>Crude oil is a non-renewable resource that takes millions of years to form naturally. Using it solely for electricity generation is considered a wasteful use of a limited resource that could otherwise be utilized for transportation or chemical production. </li>
+<li>Infrastructure like oil-fired power plants promote continued dependency on crude oil instead of transitioning the electricity sector towards renewable energy sources that have much lower lifecycle emissions.</li>
+<li>Spills or accidents in extracting, refining, or shipping crude oil to generate electricity can have devastating environmental consequences, harming ecosystems on land and in the ocean.</li>
+</ul>
+<p>So while oil-based electricity provided an economical option in the past, environmental awareness and cleaner alternatives now available make continued large-scale use of crude oil for power generation highly unsustainable and polluting.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../electricity/cost_overview.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next" href="../electricity/diesel.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../electricity/cost_overview.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next" href="../electricity/diesel.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <!-- Livereload script (if served using the cli tool) -->
+        <script>
+            const wsProtocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
+            const wsAddress = wsProtocol + "//" + location.host + "/" + "__livereload";
+            const socket = new WebSocket(wsAddress);
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload();
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../elasticlunr.min.js"></script>
+        <script src="../mark.min.js"></script>
+        <script src="../searcher.js"></script>
+
+        <script src="../clipboard.min.js"></script>
+        <script src="../highlight.js"></script>
+        <script src="../book.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../mermaid.min.js"></script>
+        <script src="../mermaid-init.js"></script>
+
+
+    </div>
+    </body>
+</html>
