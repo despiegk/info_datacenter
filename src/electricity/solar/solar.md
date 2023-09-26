@@ -28,17 +28,6 @@ The wide range accounts for differences in site location, labor rates, type of P
 The total PV system size for 1MW is typically 4000 - 5000 sqm depending on the solar irradiance availability.
 
 
-### Cost
-
-![](img/cost_solar.png)
-
-> +- 0.05 USD per kwatth, which is very good but thats only for when its sun.
-
-![](img/solar_battery.png)
-
-> +- 0.08 USD per kwatth, which is still very good, but only 40% of capacity usable when there is no SUN
-
-![](img/cost_ultracapacitor_solar.png)
 
 
 ## Land needed
