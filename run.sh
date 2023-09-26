@@ -18,8 +18,12 @@ mdbook build -d docs
 
 mkdir -p ~/Documents/tfbooks/output/$NAME
 
+
 rsync -rav --delete docs/ ~/Documents/tfbooks/output/$NAME/
 
+rm -f ~/Documents/tfbooks/src/$NAME
+mkdir -p ~/Documents/tfbooks/src/
+ln -s src ~/Documents/tfbooks/src/$NAME
 
-
+echo " - ***** $NAME DONE"
 
